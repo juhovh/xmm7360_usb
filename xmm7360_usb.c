@@ -28,7 +28,7 @@ MODULE_LICENSE("GPL");
 MODULE_VERSION("0.1");
 MODULE_AUTHOR("Juho Vähä-Herttua <juhovh@iki.fi>");
 MODULE_DESCRIPTION("A simple driver that sets the XMM7360 card from PCIe to USB mode.");
-MODULE_ALIAS("pci:v00008086d00007360sv00001CF8sd00008521bc0Dsc40i00");
+MODULE_ALIAS("pci:v00008086d00007360sv*sd*bc*sc*i*");
  
 #define XMM7360 0x7360
 
