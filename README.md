@@ -19,6 +19,9 @@ unloading the module with `rmmod` (which will also revert all changes though).
 I have tested this to work with my Lenovo X1 Carbon (7th Gen) and do not
 guarantee it to work on any other laptop. Improvements are welcome though.
 
+Other reports:
+- Works with Thinkpad P43s (@Rush)
+
 ## Installation
 
 **WARNING: There is a risk of bricking your laptop so you better know what you
