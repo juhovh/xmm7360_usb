@@ -23,6 +23,7 @@
 #include <linux/kernel.h>
 #include <linux/pci.h>
 #include <linux/acpi.h>
+#include <linux/version.h>
  
 MODULE_LICENSE("GPL");
 MODULE_VERSION("0.1");
@@ -48,8 +49,11 @@ static bool pcie_link_set_enabled(struct pci_dev *dev, bool enable) {
     struct pci_dev *rdev;
     u16 lnk_ctrl;
     bool changed;
-
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 8, 0))
+    rdev = pcie_find_root_port(dev);
+#else
     rdev = pci_find_pcie_root_port(dev);
+#endif
     if (!rdev) {
     	pr_err(KERN_ERR "Could not find the PCIe root port for %04x:%04x\n",
                dev->vendor, dev->device);
