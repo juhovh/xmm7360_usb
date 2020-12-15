@@ -63,18 +63,21 @@ sign-file: certs/signing_key.pem: No such file or directory
 ```
 
 1. Install dkms
+
 ```
 sudo apt install dkms
 ```
 
-1. Install xmm7360 module by dkms
+2. Install xmm7360 module by dkms
+
 ```
 ./install_dkms.sh
 ```
 
-1. Load xmm7360 module
+3. Load xmm7360 module
+
 ```
 sudo modprobe xmm7360_usb
 ```
 
-If you want to remove this module from dkms tree, use `sudo dkms remove -m xmm7360_usb -v 1.0 --all`
+If you want to remove this module from dkms tree, use `sudo dkms remove -m xmm7360_usb -v 0.1--all`
