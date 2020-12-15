@@ -49,3 +49,35 @@ AT+CFUN=15
 
 Everything simply worked on my machine from that onwards, and the automatically
 loaded module makes sure that the modem stays in USB mode even through reboots.
+
+## DKMS Module
+
+If you encounter something like following while executing `sudo make install`, you may try installing by DKMS module.
+
+```
+At main.c:160:
+- SSL error:02001002:system library:fopen:No such file or directory: ../crypto/bio/bss_file.c:69
+- SSL error:2006D080:BIO routines:BIO_new_file:no such file: ../crypto/bio/bss_file.c:76
+sign-file: certs/signing_key.pem: No such file or directory
+  DEPMOD  5.4.0-40-generic
+```
+
+1. Install dkms
+
+```
+sudo apt install dkms
+```
+
+2. Install xmm7360 module by dkms
+
+```
+./install_dkms.sh
+```
+
+3. Load xmm7360 module
+
+```
+sudo modprobe xmm7360_usb
+```
+
+If you want to remove this module from dkms tree, use `sudo dkms remove -m xmm7360_usb -v 0.1 --all`
