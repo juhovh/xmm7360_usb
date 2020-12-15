@@ -80,4 +80,4 @@ sudo apt install dkms
 sudo modprobe xmm7360_usb
 ```
 
-If you want to remove this module from dkms tree, use `sudo dkms remove -m xmm7360_usb -v 0.1--all`
+If you want to remove this module from dkms tree, use `sudo dkms remove -m xmm7360_usb -v 0.1 --all`
